@@ -117,6 +117,11 @@ macro(setup)
     register_link_library(OpenMP::OpenMP_CXX)
     set(CMAKE_CXX_STANDARD 17)
 
+#     if (WITH_PERFFLOWASPECT)
+    find_package(perfflowaspect REQUIRED)
+    register_link_library(perfflowaspect::WeavePassPlugin)
+    register_link_library(perfflowaspect::perfflow_runtime)
+#     endif()
 
     string(TOUPPER ${CMAKE_CXX_COMPILER_ID} COMPILER)
     if (NOT ARCH)

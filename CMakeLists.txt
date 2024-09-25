@@ -60,6 +60,8 @@ hint_flag(CXX_EXTRA_LIBRARIES "
 hint_flag(CXX_EXTRA_LINKER_FLAGS "
         Append to linker flags (i.e GCC's `-Wl` or equivalent)")
 
+set (CMAKE_CXX_FLAGS "-flegacy-pass-manager")
+
 # copy CXX_EXTRA_FLAGS <- CXX_EXTRA_LINK_FLAGS
 if ((DEFINED CXX_EXTRA_FLAGS) AND (NOT DEFINED CXX_EXTRA_LINK_FLAGS))
     set(CXX_EXTRA_LINK_FLAGS ${CXX_EXTRA_FLAGS})
@@ -133,6 +135,11 @@ if (FETCH_ONEDPL)
     endif ()
 endif ()
 
+# option(WITH_PERFFLOWASPECT "Use PerfFlowAspect for Profiling" OFF)
+
+# if (WITH_PERFFLOWASPECT)
+find_package(perfflowaspect REQUIRED)
+# endif()
 
 # include our macros
 include(cmake/register_models.cmake)
@@ -270,7 +277,12 @@ message(STATUS "Executable  : ${BIN_NAME}")
 include_directories(${CMAKE_BINARY_DIR}/generated)
 
 add_executable(${EXE_NAME} ${IMPL_SOURCES})
-target_link_libraries(${EXE_NAME} PUBLIC ${LINK_LIBRARIES} m)
+target_link_libraries(${EXE_NAME} PUBLIC ${LINK_LIBRARIES} m OpenSSL::Crypto perfflowaspect::WeavePassPlugin perfflowaspect::perfflow_runtime)
+
+# if (WITH_PERFFLOWASPECT)
+#     target_link_libraries(${EXE_NAME} OpenSSL::Crypto perfflowaspect::WeavePassPlugin perfflowaspect::perfflow_runtime)
+# endif()
+
 target_compile_definitions(${EXE_NAME} PUBLIC ${IMPL_DEFINITIONS})
 
 if (CXX_EXTRA_LIBRARIES)

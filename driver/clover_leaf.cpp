@@ -66,19 +66,22 @@ global_variables initialise(parallel_ &parallel, const std::vector<std::string> 
   bool mpi_enabled = true;
 #endif
 
-#if defined(MPIX_CUDA_AWARE_SUPPORT) && MPIX_CUDA_AWARE_SUPPORT
-  std::optional<bool> mpi_cuda_aware_header = true;
-#elif defined(MPIX_CUDA_AWARE_SUPPORT) && !MPIX_CUDA_AWARE_SUPPORT
-  std::optional<bool> mpi_cuda_aware_header = false;
-#else
-  std::optional<bool> mpi_cuda_aware_header = {};
-#endif
+// Commenting these lines so that building without GPUs on Corona and Ruby doesn't error 
+// out because of Clag/14
 
-#if defined(MPIX_CUDA_AWARE_SUPPORT)
-  std::optional<bool> mpi_cuda_aware_runtime = MPIX_Query_cuda_support() != 0;
-#else
+// #if defined(MPIX_CUDA_AWARE_SUPPORT) && MPIX_CUDA_AWARE_SUPPORT
+//   std::optional<bool> mpi_cuda_aware_header = true;
+// #elif defined(MPIX_CUDA_AWARE_SUPPORT) && !MPIX_CUDA_AWARE_SUPPORT
+//   std::optional<bool> mpi_cuda_aware_header = false;
+// #else
+  std::optional<bool> mpi_cuda_aware_header = {};
+// #endif
+
+// #if defined(MPIX_CUDA_AWARE_SUPPORT)
+//   std::optional<bool> mpi_cuda_aware_runtime = MPIX_Query_cuda_support() != 0;
+// #else
   std::optional<bool> mpi_cuda_aware_runtime = {};
-#endif
+// #endif
 
   if (!model.offload) {
     if (model.args.staging_buffer == run_args::staging_buffer::enabled) {
