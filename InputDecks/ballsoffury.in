@@ -7,9 +7,9 @@ Two high energy balls inside two regions of energy
  state 4 density=3.0 energy=0.0 geometry=cuboid xmin=0.0 xmax=7.5 ymin=0.0 ymax=2.5 zmin=10.0 zmax=15.0
  state 5 density=14.0 energy=1000.5 geometry=sphere xmin=3.0 ymin=1.0 zmin=1.0 radius=0.4
  state 6 density=14.0 energy=1000.5 geometry=sphere xmin=1.0 ymin=1.0 zmin=1.05 radius=0.4
- x_cells=256
- y_cells=128
- z_cells=256
+ x_cells=512
+ y_cells=256
+ z_cells=512
  xmin=0.0
  ymin=0.0
  zmin=0.0
@@ -18,9 +18,9 @@ Two high energy balls inside two regions of energy
  zmax=15.0
  initial_timestep=0.04
  max_timestep=0.04
- end_step=12000
- end_time=20.0
+ end_step=120000
+ end_time=400.0
  test_problem 1
 
- visit_frequency=100
+ visit_frequency=100000
 *endclover
