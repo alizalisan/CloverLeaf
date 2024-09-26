@@ -22,5 +22,4 @@ Two high energy balls inside two regions of energy
  end_time=400.0
  test_problem 1
 
- visit_frequency=100000
 *endclover
