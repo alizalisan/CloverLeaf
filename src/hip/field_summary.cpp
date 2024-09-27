@@ -40,6 +40,7 @@
 //  Note the reference solution is the value returned from an Intel compiler with
 //  ieee options set on a single core crun.
 
+__attribute__((annotate("@critical_path()")))
 void field_summary(global_variables &globals, parallel_ &parallel) {
 
   clover_report_step_header(globals, parallel);

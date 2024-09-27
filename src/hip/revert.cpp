@@ -26,6 +26,7 @@
 //  it to the start of step data, ready for the corrector.
 //  Note that this does not seem necessary in this proxy-app but should be
 //  left in to remain relevant to the full method.
+__attribute__((annotate("@critical_path()")))
 void revert_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &density1,
                    clover::Buffer2D<double> &energy0, clover::Buffer2D<double> &energy1) {
 
@@ -40,6 +41,7 @@ void revert_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<
 //  @brief Driver routine for the revert kernels.
 //  @author Wayne Gaudin
 //  @details Invokes the user specified revert kernel.
+__attribute__((annotate("@critical_path()")))
 void revert(global_variables &globals) {
 
   for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {

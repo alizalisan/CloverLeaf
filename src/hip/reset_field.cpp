@@ -25,6 +25,7 @@
 //  @author Wayne Gaudin
 //  @details Copies all of the final end of step filed data to the begining of
 //  step data, ready for the next timestep.
+__attribute__((annotate("@critical_path()")))
 void reset_field_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &density1,
                         clover::Buffer2D<double> &energy0, clover::Buffer2D<double> &energy1, clover::Buffer2D<double> &xvel0,
                         clover::Buffer2D<double> &xvel1, clover::Buffer2D<double> &yvel0, clover::Buffer2D<double> &yvel1) {
@@ -47,6 +48,7 @@ void reset_field_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buff
 //  @brief Reset field driver
 //  @author Wayne Gaudin
 //  @details Invokes the user specified field reset kernel.
+__attribute__((annotate("@critical_path()")))
 void reset_field(global_variables &globals) {
 
   double kernel_time = 0;

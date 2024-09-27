@@ -34,6 +34,7 @@
 // @author Wayne Gaudin
 // @details The pressure and viscosity gradients are used to update the
 // velocity field.
+__attribute__((annotate("@critical_path()")))
 void accelerate_kernel(int x_min, int x_max, int y_min, int y_max, double dt, clover::Buffer2D<double> &xarea,
                        clover::Buffer2D<double> &yarea, clover::Buffer2D<double> &volume, clover::Buffer2D<double> &density0,
                        clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity, clover::Buffer2D<double> &xvel0,
@@ -65,6 +66,7 @@ void accelerate_kernel(int x_min, int x_max, int y_min, int y_max, double dt, cl
 //  @brief Driver for the acceleration kernels
 //  @author Wayne Gaudin
 //  @details Calls user requested kernel
+__attribute__((annotate("@critical_path()")))
 void accelerate(global_variables &globals) {
 
   double kernel_time = 0;
