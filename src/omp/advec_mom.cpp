@@ -27,6 +27,7 @@
 //  using van-Leer limiting and directional splitting.
 //  Note that although pre_vol is only set and not used in the update, please
 //  leave it in the method.
+__attribute__((annotate("@critical_path()")))
 void advec_mom_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &vel1, clover::Buffer2D<double> &mass_flux_x,
                       clover::Buffer2D<double> &vol_flux_x, clover::Buffer2D<double> &mass_flux_y, clover::Buffer2D<double> &vol_flux_y,
                       clover::Buffer2D<double> &volume, clover::Buffer2D<double> &density1, clover::Buffer2D<double> &node_flux,
@@ -227,6 +228,7 @@ void advec_mom_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer
 //  @brief Momentum advection driver
 //  @author Wayne Gaudin
 //  @details Invokes the user specified momentum advection kernel.
+__attribute__((annotate("@critical_path()")))
 void advec_mom_driver(global_variables &globals, int tile, int which_vel, int direction, int sweep_number) {
 
   tile_type &t = globals.chunk.tiles[tile];

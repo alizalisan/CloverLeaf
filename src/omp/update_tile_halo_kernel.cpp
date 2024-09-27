@@ -27,6 +27,7 @@
 //   of data governs how this is carried out. External boundaries are always
 //   reflective.
 
+__attribute__((annotate("@critical_path()")))
 void update_tile_halo_l_kernel(
     global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &energy0,
     clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity, clover::Buffer2D<double> &soundspeed,
@@ -220,6 +221,7 @@ void update_tile_halo_l_kernel(
   }
 }
 
+__attribute__((annotate("@critical_path()")))
 void update_tile_halo_r_kernel(
     global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &energy0,
     clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity, clover::Buffer2D<double> &soundspeed,
@@ -417,6 +419,7 @@ void update_tile_halo_r_kernel(
 //  This is because the corner ghosts will get communicated in the left right
 //  communication
 
+__attribute__((annotate("@critical_path()")))
 void update_tile_halo_t_kernel( //
     global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &energy0,
     clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity, clover::Buffer2D<double> &soundspeed,
@@ -610,6 +613,7 @@ void update_tile_halo_t_kernel( //
   }
 }
 
+__attribute__((annotate("@critical_path()")))
 void update_tile_halo_b_kernel(
     global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density0, clover::Buffer2D<double> &energy0,
     clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity, clover::Buffer2D<double> &soundspeed,

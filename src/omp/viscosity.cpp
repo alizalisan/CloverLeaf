@@ -27,6 +27,7 @@
 //  smooth out shock front and prevent oscillations around discontinuities.
 //  Only cells in compression will have a non-zero value.
 
+__attribute__((annotate("@critical_path()")))
 void viscosity_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer1D<double> &celldx, clover::Buffer1D<double> &celldy,
                       clover::Buffer2D<double> &density0, clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &viscosity,
                       clover::Buffer2D<double> &xvel0, clover::Buffer2D<double> &yvel0) {
@@ -71,6 +72,7 @@ void viscosity_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer
 //  @author Wayne Gaudin
 //  @details Selects the user specified kernel to caluclate the artificial
 //  viscosity.
+__attribute__((annotate("@critical_path()")))
 void viscosity(global_variables &globals) {
 
   for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {

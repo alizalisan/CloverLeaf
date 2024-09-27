@@ -27,6 +27,7 @@
 #include "initialise_chunk.h"
 #include "context.h"
 
+__attribute__((annotate("@critical_path()")))
 void initialise_chunk(const int tile, global_variables &globals) {
 
   double dx = (globals.config.grid.xmax - globals.config.grid.xmin) / (double)(globals.config.grid.x_cells);
