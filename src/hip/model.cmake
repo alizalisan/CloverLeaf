@@ -15,6 +15,12 @@ macro(setup)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+    set(CMAKE_CXX_COMPILER hipcc)
+    set(HIPCC_FLAGS  "-Xcompiler=-Xclang -Xcompiler=-load -Xcompiler=-Xclang -Xcompiler=/g/g92/lisan1/PFA/PerfFlowAspect/src/c/install-corona-clang14/lib64/libWeavePass.so")
+
+    set(CMAKE_CXX_FLAGS "-I /opt/rocm-5.2.3/include -D__HIP_PLATFORM_AMD__ -flegacy-pass-manager" CACHE PATH "" FORCE)
+    set(CMAKE_C_FLAGS "-I /opt/rocm-5.2.3/include -D__HIP_PLATFORM_AMD__ -flegacy-pass-manager" CACHE PATH "" FORCE)
+
     if (MANAGED_ALLOC)
         register_definitions(CLOVER_MANAGED_ALLOC)
     endif ()
