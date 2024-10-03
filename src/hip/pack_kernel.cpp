@@ -23,7 +23,7 @@
 
 #include "pack_kernel.h"
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_pack_message_left(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                               clover::Buffer1D<double> &left_snd, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                               int depth, int field_type, int buffer_offset) {
@@ -60,7 +60,7 @@ void clover_pack_message_left(global_variables &, int x_min, int x_max, int y_mi
   });
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_unpack_message_left(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                 clover::Buffer1D<double> &left_rcv, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                 int depth, int field_type, int buffer_offset) {
@@ -93,7 +93,7 @@ void clover_unpack_message_left(global_variables &, int x_min, int x_max, int y_
   });
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_pack_message_right(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                clover::Buffer1D<double> &right_snd, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                int depth, int field_type, int buffer_offset) {
@@ -126,7 +126,7 @@ void clover_pack_message_right(global_variables &, int x_min, int x_max, int y_m
   });
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_unpack_message_right(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                  clover::Buffer1D<double> &right_rcv, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                  int depth, int field_type, int buffer_offset) {
@@ -163,7 +163,7 @@ void clover_unpack_message_right(global_variables &, int x_min, int x_max, int y
   });
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_pack_message_top(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                              clover::Buffer1D<double> &top_snd, int cell_data, int vertex_data, int x_face_data, int y_face_data, int depth,
                              int field_type, int buffer_offset) {
@@ -196,7 +196,7 @@ void clover_pack_message_top(global_variables &, int x_min, int x_max, int y_min
   }
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_unpack_message_top(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                clover::Buffer1D<double> &top_rcv, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                int depth, int field_type, int buffer_offset) {
@@ -233,7 +233,7 @@ void clover_unpack_message_top(global_variables &, int x_min, int x_max, int y_m
   }
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_pack_message_bottom(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                 clover::Buffer1D<double> &bottom_snd, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                 int depth, int field_type, int buffer_offset) {
@@ -270,7 +270,7 @@ void clover_pack_message_bottom(global_variables &, int x_min, int x_max, int y_
   }
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_unpack_message_bottom(global_variables &, int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &field,
                                   clover::Buffer1D<double> &bottom_rcv, int cell_data, int vertex_data, int x_face_data, int y_face_data,
                                   int depth, int field_type, int buffer_offset) {

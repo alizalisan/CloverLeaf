@@ -32,7 +32,7 @@
 
 __device__ inline double SUM(double a, double b) { return a + b; }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void calc_dt_kernel(global_variables &globals, int x_min, int x_max, int y_min, int y_max, double dtmin, double dtc_safe, double dtu_safe,
                     double dtv_safe, double dtdiv_safe, clover::Buffer2D<double> &xarea, clover::Buffer2D<double> &yarea,
                     clover::Buffer1D<double> &cellx, clover::Buffer1D<double> &celly, clover::Buffer1D<double> &celldx,
@@ -159,7 +159,7 @@ void calc_dt_kernel(global_variables &globals, int x_min, int x_max, int y_min, 
 //  @brief Driver for the timestep kernels
 //  @author Wayne Gaudin
 //  @details Invokes the user specified timestep kernel.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void calc_dt(global_variables &globals, int tile, double &local_dt, std::string &local_control, double &xl_pos, double &yl_pos, int &jldt,
              int &kldt) {
 

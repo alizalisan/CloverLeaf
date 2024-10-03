@@ -22,7 +22,7 @@
 #include "initialise.h"
 #include "start.h"
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 model create_context(bool silent, const std::vector<std::string> &args) {
   struct Device {
     int id{};
@@ -45,7 +45,7 @@ model create_context(bool silent, const std::vector<std::string> &args) {
   return model{clover::context{}, "HIP", true, parsed};
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void report_context(const clover::context &) {
   int device = -1;
   clover::checkError(hipGetDevice(&device));

@@ -19,7 +19,7 @@
 
 #include "finalise.h"
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void finalise(global_variables &globals) {
   for (tile_type &t : globals.chunk.tiles) {
     t.field.density0.release();

@@ -33,7 +33,7 @@
 //  change on cell volume due to the velocity gradients in a cell. The time
 //  level of the velocity data depends on whether it is invoked as the
 //  predictor or corrector.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void PdV_kernel(bool predict, int x_min, int x_max, int y_min, int y_max, double dt, clover::Buffer2D<double> &xarea,
                 clover::Buffer2D<double> &yarea, clover::Buffer2D<double> &volume, clover::Buffer2D<double> &density0,
                 clover::Buffer2D<double> &density1, clover::Buffer2D<double> &energy0, clover::Buffer2D<double> &energy1,

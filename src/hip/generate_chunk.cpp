@@ -28,7 +28,7 @@
 #include "context.h"
 #include <cmath>
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void generate_chunk(const int tile, global_variables &globals) {
 
   // Need to copy the host array of state input data into a device array

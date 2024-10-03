@@ -35,7 +35,7 @@ CloverLeaf. If not, see http://www.gnu.org/licenses/.
 #include "comms.h"
 #include "pack_kernel.h"
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_allocate_buffers(global_variables &globals, parallel_ &parallel) {
 
   // Unallocated buffers for external boundaries caused issues on some systems so they are now
@@ -69,7 +69,7 @@ void clover_allocate_buffers(global_variables &globals, parallel_ &parallel) {
   }
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_exchange(global_variables &globals, const int fields[NUM_FIELDS], const int depth) {
 
   // Assuming 1 patch per task, this will be changed
@@ -265,7 +265,7 @@ void clover_exchange(global_variables &globals, const int fields[NUM_FIELDS], co
   }
 }
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void clover_send_recv_message_left(global_variables &globals, double *left_snd_buffer, double *left_rcv_buffer, int total_size,
                                    int tag_send, int tag_recv, MPI_Request &req_send, MPI_Request &req_recv) {
   clover::checkError(hipDeviceSynchronize());
