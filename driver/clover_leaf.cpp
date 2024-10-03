@@ -200,6 +200,7 @@ global_variables initialise(parallel_ &parallel, const std::vector<std::string> 
   return globals;
 }
 
+__attribute__((annotate("@critical_path()")))
 int main(int argc, char *argv[]) {
 
   MPI_Init(&argc, &argv);

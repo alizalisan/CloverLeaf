@@ -25,7 +25,7 @@
 //  @author Wayne Gaudin
 //  @details Calculates the pressure and sound speed for the mesh chunk using
 //  the ideal gas equation of state, with a fixed gamma of 1.4.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void ideal_gas_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer2D<double> &density, clover::Buffer2D<double> &energy,
                       clover::Buffer2D<double> &pressure, clover::Buffer2D<double> &soundspeed) {
 
@@ -53,7 +53,7 @@ void ideal_gas_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buffer
 //  @details Invokes the user specified kernel for the ideal gas equation of
 //  state using the specified time level data.
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void ideal_gas(global_variables &globals, const int tile, bool predict) {
 
   tile_type &t = globals.chunk.tiles[tile];

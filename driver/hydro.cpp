@@ -43,6 +43,7 @@ int maxloc(const std::vector<double> &totals, const int len) {
   return loc;
 }
 
+__attribute__((annotate("@critical_path()")))
 void hydro(global_variables &globals, parallel_ &parallel) {
 
   double timerstart = timer();

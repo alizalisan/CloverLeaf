@@ -31,7 +31,7 @@
 #include <sstream>
 #include <string>
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 model create_context(bool silent, const std::vector<std::string> &args) {
   auto [_, parsed] = list_and_parse<std::string>(
       silent, {"Host CPU"}, [](const auto &d) { return d; }, args);

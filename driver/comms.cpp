@@ -268,6 +268,7 @@ void clover_min(double &value) {
   value = minimum;
 }
 
+__attribute__((annotate("@critical_path()")))
 void clover_allgather(double value, std::vector<double> &values) {
   values[0] = value; // Just to ensure it will work in serial
   MPI_Allgather(&value, 1, MPI_DOUBLE, values.data(), 1, MPI_DOUBLE, MPI_COMM_WORLD);

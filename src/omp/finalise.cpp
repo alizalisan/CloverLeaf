@@ -19,5 +19,5 @@
 
 #include "finalise.h"
 
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void finalise(global_variables &globals) {}

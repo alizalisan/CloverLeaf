@@ -24,7 +24,7 @@
 //  @brief Fortran flux kernel.
 //  @author Wayne Gaudin
 //  @details The edge volume fluxes are calculated based on the velocity fields.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void flux_calc_kernel(int x_min, int x_max, int y_min, int y_max, double dt, clover::Buffer2D<double> &xarea,
                       clover::Buffer2D<double> &yarea, clover::Buffer2D<double> &xvel0, clover::Buffer2D<double> &yvel0,
                       clover::Buffer2D<double> &xvel1, clover::Buffer2D<double> &yvel1, clover::Buffer2D<double> &vol_flux_x,

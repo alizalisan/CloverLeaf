@@ -26,6 +26,7 @@
 //  @brief Top level advection driver
 //  @author Wayne Gaudin
 //  @details Controls the advection step and invokes required communications.
+__attribute__((annotate("@critical_path()")))
 void advection(global_variables &globals) {
 
   int sweep_number = 1;

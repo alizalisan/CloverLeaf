@@ -30,7 +30,7 @@
 //   for any halo cells that lie on an external boundary. The location and type
 //   of data governs how this is carried out. External boundaries are always
 //   reflective.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void update_halo_kernel(int x_min, int x_max, int y_min, int y_max, const std::array<int, 4> &chunk_neighbours,
                         const std::array<int, 4> &tile_neighbours, field_type &field, const int fields[NUM_FIELDS], int depth) {
 
@@ -688,7 +688,7 @@ void update_halo_kernel(int x_min, int x_max, int y_min, int y_max, const std::a
 //  @author Wayne Gaudin
 //  @details Invokes the kernels for the internal and external halo cells for
 //  the fields specified.
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void update_halo(global_variables &globals, int fields[NUM_FIELDS], const int depth) {
 
   double kernel_time = 0;

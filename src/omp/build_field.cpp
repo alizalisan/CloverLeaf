@@ -26,7 +26,7 @@
 #include "context.h"
 
 // Allocate Kokkos Views for the data arrays
-__attribute__((annotate("@critical_path()")))
+// __attribute__((annotate("@critical_path()")))
 void build_field(global_variables &globals) {
 
   for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {
