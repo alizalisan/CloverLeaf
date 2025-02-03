@@ -60,8 +60,6 @@ hint_flag(CXX_EXTRA_LIBRARIES "
 hint_flag(CXX_EXTRA_LINKER_FLAGS "
         Append to linker flags (i.e GCC's `-Wl` or equivalent)")
 
-set (CMAKE_CXX_FLAGS "-flegacy-pass-manager")
-
 # copy CXX_EXTRA_FLAGS <- CXX_EXTRA_LINK_FLAGS
 if ((DEFINED CXX_EXTRA_FLAGS) AND (NOT DEFINED CXX_EXTRA_LINK_FLAGS))
     set(CXX_EXTRA_LINK_FLAGS ${CXX_EXTRA_FLAGS})
