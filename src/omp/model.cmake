@@ -122,6 +122,8 @@ macro(setup)
     register_link_library(perfflowaspect::WeavePassPlugin)
     register_link_library(perfflowaspect::perfflow_runtime)
 #     endif()
+    set(CMAKE_CXX_FLAGS "-fpass-plugin=${PERFFLOWASPECT_DIR}/lib64/libWeavePass.so" CACHE PATH "" FORCE)
+    set(CMAKE_C_FLAGS "-fpass-plugin=${PERFFLOWASPECT_DIR}/lib64/libWeavePass.so" CACHE PATH "" FORCE)
 
     string(TOUPPER ${CMAKE_CXX_COMPILER_ID} COMPILER)
     if (NOT ARCH)
