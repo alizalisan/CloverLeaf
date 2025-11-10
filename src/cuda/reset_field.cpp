@@ -47,6 +47,7 @@ void reset_field_kernel(int x_min, int x_max, int y_min, int y_max, clover::Buff
 //  @brief Reset field driver
 //  @author Wayne Gaudin
 //  @details Invokes the user specified field reset kernel.
+__attribute__((annotate("@critical_path()")))
 void reset_field(global_variables &globals) {
 
   double kernel_time = 0;

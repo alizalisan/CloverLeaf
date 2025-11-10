@@ -42,6 +42,7 @@ void flux_calc_kernel(int x_min, int x_max, int y_min, int y_max, double dt, clo
 // @brief Driver for the flux kernels
 // @author Wayne Gaudin
 // @details Invokes the used specified flux kernel
+__attribute__((annotate("@critical_path()")))
 void flux_calc(global_variables &globals) {
 
   double kernel_time = 0;

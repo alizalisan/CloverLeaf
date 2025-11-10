@@ -83,6 +83,7 @@ void PdV_kernel(bool predict, int x_min, int x_max, int y_min, int y_max, double
 //  @brief Driver for the PdV update.
 //  @author Wayne Gaudin
 //  @details Invokes the user specified kernel for the PdV update.
+__attribute__((annotate("@critical_path()")))
 void PdV(global_variables &globals, bool predict) {
 
   double kernel_time = 0;

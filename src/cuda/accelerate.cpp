@@ -56,6 +56,7 @@ void accelerate_kernel(int x_min, int x_max, int y_min, int y_max, double dt, cl
 //  @brief Driver for the acceleration kernels
 //  @author Wayne Gaudin
 //  @details Calls user requested kernel
+__attribute__((annotate("@critical_path()")))
 void accelerate(global_variables &globals) {
 
   double kernel_time = 0;
