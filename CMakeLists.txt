@@ -138,6 +138,7 @@ endif ()
 # if (WITH_PERFFLOWASPECT)
 find_package(perfflowaspect REQUIRED)
 # endif()
+find_package(adiak REQUIRED)
 
 # include our macros
 include(cmake/register_models.cmake)
